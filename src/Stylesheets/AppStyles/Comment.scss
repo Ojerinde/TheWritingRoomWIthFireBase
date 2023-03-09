@@ -1,0 +1,30 @@
+.comment {
+  &__title {
+    width: 100%;
+    margin: 3rem auto 1rem;
+    font-size: 2.8rem;
+    letter-spacing: 0.4rem;
+    color: $primary-color;
+  }
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    border: 0.1rem solid #ccc;
+    padding: 1.5rem;
+    border-radius: 0.3rem;
+    margin: 0.8rem 0;
+  }
+
+  &__author {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  &__text {
+    font-size: 1.6rem;
+    line-height: 1.4;
+  }
+}

@@ -1,0 +1,123 @@
+.pagination {
+  &__card {
+    width: 70%;
+    margin: 4rem auto 3rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__icons--box {
+    flex-basis: 18%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__icons--prev,
+  &__icons--next {
+    height: 3.5rem;
+    width: 3.5rem;
+    fill: $primary-color;
+    cursor: pointer;
+
+    &:hover {
+      fill: $primary-light-color;
+    }
+  }
+
+  &__icons--paragraph {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: $primary-dark-color;
+  }
+
+  &__buttons {
+    flex-basis: 75%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    & button {
+      text-align: center;
+      padding: 0.7rem 1.1rem;
+      margin: 0.5rem;
+      font-size: 1.4rem;
+      font-weight: 500;
+      background-color: $primary-dark-color;
+      color: $secondary-color;
+      border-radius: 0.5rem;
+      border: 0.2rem solid transparent;
+      box-shadow: $box-shadow;
+      transition: all 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        border: 0.2rem solid $primary-dark-color;
+        background-color: $secondary-light-color;
+        transform: translateY(-0.3rem);
+        color: $primary-color;
+      }
+
+      &.active__button,
+      &:focus {
+        border: 0.2rem solid $primary-color;
+        color: $primary-color;
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+.not__allowed {
+  cursor: not-allowed !important;
+  fill: $secondary-dark-color !important;
+}
+
+@media only screen and (max-width: 900px) {
+  .pagination {
+    &__card {
+      width: 80%;
+    }
+    &__icons--box {
+      flex-basis: 20%;
+    }
+
+    &__icons--paragraph {
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+
+    &__buttons {
+      flex-basis: 70%;
+
+      & button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.7rem;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .pagination {
+    &__card {
+      width: 90%;
+      flex-direction: column;
+    }
+    &__icons--box {
+      width: 40%;
+    }
+    &__buttons {
+      margin: 2rem auto 1rem;
+      width: 100%;
+      justify-content: center;
+
+      & button {
+        padding: 0.8rem 1.5rem;
+        margin: 0 0.7rem;
+        font-size: 1.7rem;
+        font-weight: 600;
+      }
+    }
+  }
+}

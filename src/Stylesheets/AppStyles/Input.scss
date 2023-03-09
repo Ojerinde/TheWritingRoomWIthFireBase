@@ -1,0 +1,38 @@
+.input__group {
+  display: flex;
+  flex-direction: column;
+
+  & label {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.15rem;
+    color: $primary-color;
+  }
+
+  & input,
+  & textarea {
+    padding: 1rem;
+    border: 0.1rem solid $primary-light-color;
+    border-radius: 0.3rem;
+    margin: 1rem 0 2rem 0;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: rgba(35, 75, 75, 0.9);
+
+    &:focus {
+      outline: none;
+      border: 0.1rem solid $primary-dark-color;
+    }
+
+    &::placeholder {
+      color: rgba(42, 41, 41, 0.6);
+      font-weight: 400;
+      font-size: 1.5rem;
+      letter-spacing: 0.1rem;
+    }
+  }
+
+  & textarea {
+    height: 13rem;
+  }
+}

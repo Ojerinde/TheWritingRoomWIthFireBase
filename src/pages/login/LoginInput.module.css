@@ -1,0 +1,51 @@
+.input__group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.label {
+  font-size: 1.7rem;
+  margin-bottom: 0.5rem;
+  color: #44607c;
+}
+
+.input {
+  padding: 1.4rem;
+  border-radius: 0.4rem;
+  border: 0.1rem solid #6085aa;
+  margin: 0.8rem 0 1.5rem 0;
+  font-size: 1.7rem;
+  font-weight: 300;
+  color: #3a516a;
+  width: 100%;
+}
+
+.input:focus {
+  outline: none;
+  border: 0.1rem solid #3a516a;
+}
+
+.input::placeholder {
+  color: #656262;
+  font-size: 1.7rem;
+  letter-spacing: 0.1rem;
+}
+
+.eye {
+  position: absolute;
+  top: 63%;
+  right: 5%;
+  transform: translateY(-50%);
+}
+
+.eyeSvg svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  fill: #313030db;
+}
+
+@media screen and (max-width: 1068px) {
+}

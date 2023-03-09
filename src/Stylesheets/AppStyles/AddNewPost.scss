@@ -1,0 +1,73 @@
+.new__post {
+  &--card {
+    width: 50%;
+    margin: 0 auto 2rem auto;
+  }
+  &--box {
+    width: 100%;
+    margin-top: 1rem;
+    text-align: right;
+  }
+  &--button {
+    border: none;
+    border-radius: 0.2rem;
+    width: fit-content;
+    font-size: 1.4rem;
+    padding: 1.2rem 5rem;
+    background: linear-gradient(to bottom left, #334353, #1f2c38);
+    color: #ffffff;
+    transition: all 0.3s;
+
+    &:hover {
+      background: linear-gradient(to top left, #44607c, #2c3e50);
+    }
+  }
+  &--icon {
+    height: 5rem;
+    width: 2.5rem;
+    fill: $primary-color;
+    margin-right: 3rem;
+    cursor: pointer;
+
+    &:hover {
+      fill: $primary-light-color;
+    }
+  }
+  &--iconbox {
+    width: 50%;
+    margin: 2rem auto;
+    @media only screen and (max-width: $bp--large) {
+      width: 70%;
+    }
+    @media only screen and (max-width: $bp--medium) {
+      width: 80%;
+    }
+    @media only screen and (max-width: $bp--small) {
+      width: 90%;
+    }
+  }
+}
+
+@media only screen and (max-width: $bp--large) {
+  .new__post {
+    &--card {
+      width: 70%;
+    }
+  }
+}
+
+@media only screen and (max-width: $bp--medium) {
+  .new__post {
+    &--card {
+      width: 80%;
+    }
+  }
+}
+
+@media only screen and (max-width: $bp--small) {
+  .new__post {
+    &--card {
+      width: 90%;
+    }
+  }
+}

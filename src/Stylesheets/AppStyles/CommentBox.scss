@@ -1,0 +1,32 @@
+.comment__box {
+  & {
+    width: 100%;
+  }
+  &--buttonbox {
+    display: flex;
+    justify-content: flex-end;
+    @media only screen and (max-width: $bp--small) {
+      flex-wrap: wrap;
+    }
+  }
+  &--input {
+    margin: 0 1rem !important;
+  }
+  &--button {
+    margin-left: 1.5rem;
+    border: none;
+    border-radius: 1rem;
+    width: fit-content;
+    font-size: 1.4rem;
+    padding: 1rem 3rem;
+    background: linear-gradient(to bottom left, #44607c, #2c3e50);
+    color: #ffffff;
+    transition: all 0.3s;
+    @media only screen and (max-width: $bp--small) {
+      margin: 1rem 1rem;
+    }
+    &:hover {
+      background: linear-gradient(to top left, #44607c, #2c3e50);
+    }
+  }
+}

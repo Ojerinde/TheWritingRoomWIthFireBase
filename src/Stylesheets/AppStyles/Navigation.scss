@@ -1,0 +1,84 @@
+.main__header {
+  background-color: $primary-color;
+  padding: 2.5rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media only screen and (max-width: 650px) {
+    flex-wrap: wrap;
+  }
+
+  & .logo {
+    flex-basis: 45%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    & img {
+      height: 4rem;
+      width: 4rem;
+    }
+    & h3 {
+      margin-left: 2rem;
+      font-size: 2.5rem;
+      letter-spacing: 0.1rem;
+      text-transform: uppercase;
+      color: $secondary-dark-color;
+    }
+
+    @media only screen and (max-width: 650px) {
+      flex-basis: 100%;
+    }
+  }
+
+  & ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    flex-basis: 55%;
+    @media only screen and (max-width: 650px) {
+      flex-basis: 100%;
+      margin-top: 2rem;
+      justify-content: center;
+    }
+    & li {
+      & a:link,
+      & a:visited {
+        text-decoration: none;
+        padding: 0.8rem 1.2rem;
+        text-transform: capitalize;
+        color: $secondary-light-color;
+        border-radius: 0.7rem;
+        font-size: 2rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        margin: 0 1rem;
+      }
+
+      & a:hover {
+        background-color: $secondary-color;
+        color: rgba(22, 63, 69, 0.806);
+      }
+    }
+  }
+}
+
+.header__active {
+  color: $secondary-light-color !important;
+  background-color: rgba($secondary-dark-color, 0.6);
+}
+.sticky {
+  width: 100%;
+  position: fixed;
+  background-color: rgba(135, 132, 132, 0.928);
+  z-index: 100;
+  top: 0;
+}
+
+@media only screen and (max-width: 900px) {
+  .main__header {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

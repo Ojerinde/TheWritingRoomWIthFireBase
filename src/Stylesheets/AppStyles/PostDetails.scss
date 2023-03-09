@@ -1,0 +1,119 @@
+.post {
+  &__body {
+    border: 0.1rem;
+    background-color: $secondary-light-color;
+    padding: 4rem 2rem 2rem;
+  }
+  &__details {
+    width: 70%;
+    margin: 1rem auto 2rem;
+    padding: 2rem;
+    @media only screen and (max-width: $bp--large) {
+      width: 80%;
+    }
+    @media only screen and (max-width: $bp--medium) {
+      width: 90%;
+    }
+    @media only screen and (max-width: $bp--small) {
+      width: 98%;
+    }
+    &--backiconbox {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+    &--backicon {
+      height: 5rem;
+      width: 2.5rem;
+      fill: $primary-color;
+      cursor: pointer;
+
+      &:hover {
+        fill: $primary-light-color;
+      }
+    }
+
+    &--header {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    &--h1 {
+      font-size: 2.8rem;
+      font-weight: bold;
+      margin: 1.5rem 0;
+      color: $primary-color;
+    }
+    &--h3 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-left: 1rem;
+      color: $primary-light-color;
+    }
+
+    &--img {
+      width: 6rem;
+      height: 6rem;
+      border-radius: 50%;
+      fill: $primary-color;
+    }
+
+    &--article {
+      font-size: 1.6rem;
+      line-height: 1.5;
+      color: $primary-dark-color;
+    }
+
+    &--footer {
+      width: 100%;
+      margin-top: 5rem;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    &--iconbox {
+      position: relative;
+    }
+    &--iconname {
+      clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 80%,
+        65% 80%,
+        50% 100%,
+        45% 80%,
+        0 80%
+      );
+      background-color: $primary-light-color;
+      color: $secondary-color;
+      box-shadow: 0 1rem 2rem $secondary-color;
+      padding: 1rem 1rem 2rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      position: absolute;
+      top: -50%;
+      left: 48%;
+      transform: translate(-50%, -50%);
+    }
+    &--icon {
+      fill: $primary-light-color;
+      position: relative;
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      cursor: pointer;
+      margin-right: 1.5rem;
+      transition: all 0.3s;
+      &:hover {
+        fill: $primary-light-color;
+      }
+    }
+  }
+  &__comment--box {
+    margin: 2rem 0;
+    width: 100%;
+  }
+  &__comment--list {
+    margin: 2rem 0;
+  }
+}

@@ -1,0 +1,43 @@
+.error__box {
+  position: fixed;
+  top: 20%;
+  right: 0;
+  @include flex-center;
+  width: 25% ;
+  height: 70vh;
+  background-color: $primary-color ;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  backdrop-filter: blur(.2rem);
+  z-index: 10;
+  animation: errorAnimation .5s linear;
+}
+.error__message {
+  color: $secondary-color;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+@keyframes errorAnimation {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.close__message {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  fill: $secondary-dark-color;
+  height: 1.7rem;
+  width: 1.7rem;
+  cursor: pointer;
+  transition: all .3s;
+
+  &:hover {
+    fill: $secondary-color;
+  }
+}

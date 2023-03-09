@@ -1,0 +1,157 @@
+.section {
+  padding: 4rem 8rem;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.landing {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  flex-basis: 45%;
+  color: #202020;
+}
+
+.h1 {
+  color: #44607c;
+  font-size: 2.5rem;
+  line-height: 5rem;
+  word-spacing: 0.4rem;
+}
+
+.span {
+  font-weight: 800;
+  color: #2c3e50;
+  font-size: 4rem;
+}
+
+.p {
+  margin: 3rem 0 2rem;
+  color: #44607c;
+  font-size: 1.8rem;
+}
+
+.btn__box {
+  width: 100%;
+}
+
+.btn {
+  height: 6.5rem;
+  width: 18rem;
+  border-radius: 1rem;
+  font-size: 2rem;
+  border: 0.2rem solid #44607c;
+  transition: all 0.3s;
+}
+
+.btn__primary {
+  color: #ffffff;
+  background: linear-gradient(to right bottom, #2c3e50, #141c24);
+  transition: all 0.3s;
+}
+
+.btn__secondary {
+  margin-left: 2rem;
+  color: #44607c;
+  background-color: #ffffff;
+  transition: all 0.3s;
+}
+.btn__primary:hover {
+  background: linear-gradient(to right bottom, #212e3c, #141c24c7);
+}
+
+.btn__secondary:hover {
+  color: #ffffff;
+  background: linear-gradient(to right bottom, #2c3e50, #141c24);
+}
+
+.right {
+  flex-basis: 50%;
+}
+
+.img {
+  margin-top: 8rem;
+  height: 70%;
+  object-fit: contain;
+  width: 100%;
+  border-radius: 2rem;
+}
+
+.animate {
+  padding: 3rem;
+  position: absolute;
+  white-space: nowrap;
+  top: 0;
+  left: 0;
+  animation: slide-right-to-left 15s linear infinite;
+  font-size: 3.5rem;
+  font-weight: 300;
+  letter-spacing: 0.2rem;
+}
+
+@keyframes slide-right-to-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .section {
+    padding: 4rem 8rem;
+    height: fit-content;
+  }
+  .landing {
+    margin-top: 4rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .left {
+    margin-top: 6rem;
+    width: 100%;
+  }
+
+  .p {
+    margin: 2rem 0 1.5rem;
+    font-size: 2.2rem;
+    color: #202020;
+  }
+  .btn__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn {
+    height: 7rem;
+    width: 20rem;
+    margin: 1rem auto;
+    font-size: 2rem;
+  }
+
+  .right {
+    width: 100%;
+  }
+
+  .img {
+    margin-top: 3rem;
+    height: 50vh;
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .section {
+    padding: 4rem 2rem;
+  }
+}

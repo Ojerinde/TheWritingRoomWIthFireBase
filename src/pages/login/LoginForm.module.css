@@ -1,0 +1,56 @@
+.login__form {
+  width: 100%;
+  margin: 2rem auto;
+}
+
+.invalid__input {
+  width: 100%;
+  margin-top: -2rem;
+  color: #d56974;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn__box {
+  width: 100%;
+  margin: 3rem 0 0;
+}
+
+.button {
+  border: none;
+  border-radius: 0.2rem;
+  width: 100%;
+  font-size: 1.4rem;
+  padding: 1.5rem 0;
+  background: linear-gradient(to bottom left, #44607c, #2c3e50);
+  color: #ffffff;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  background: linear-gradient(to top left, #44607c, #2c3e50);
+}
+
+.error__message {
+  text-align: center;
+  border: 0.1rem solid rgba(119, 105, 105, 0.7);
+  font-size: 1.8rem;
+  color: #44607c;
+  padding: 0.8rem 0;
+  border-radius: 0.4rem;
+}
+
+.forget:link,
+.forget:visited {
+  display: block;
+  width: 100%;
+  margin-top: -1.5rem;
+  text-align: right;
+  font-size: 1.2rem;
+  color: #ad703d;
+}
+
+.forget:hover,
+.forget:active {
+  color: #b1580f;
+}

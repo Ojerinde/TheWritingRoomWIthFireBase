@@ -1,0 +1,51 @@
+.nopage__card {
+  width: 60%;
+  padding: 4rem;
+  margin: 6rem auto;
+  text-align: center;
+
+  & h1 {
+    font-size: 7rem;
+    color: $primary-light-color;
+    margin-bottom: 3.5rem;
+    letter-spacing: 0.6rem;
+  }
+
+  & h2 {
+    font-size: 3rem;
+    color: $primary-light-color;
+  }
+
+  & h3 {
+    font-size: 2.2rem;
+    color: $primary-color;
+    margin: 5rem 0 6rem;
+  }
+
+  & button {
+    border: none;
+    border-radius: 0.5rem;
+    width: fit-content;
+    font-size: 1.8rem;
+    padding: 1.5rem 4rem;
+    background: linear-gradient(to bottom left, #44607c, #2c3e50);
+    color: #ffffff;
+    transition: all 0.3s;
+
+    &:hover {
+      background: linear-gradient(to top left, #44607c, #2c3e50);
+    }
+  }
+}
+
+@media only screen and (max-width: $bp--medium) {
+  .nopage__card {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: $bp--small) {
+  .nopage__card {
+    width: 90%;
+  }
+}

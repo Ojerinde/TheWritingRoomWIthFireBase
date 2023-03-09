@@ -1,0 +1,40 @@
+.my__posts {
+  width: 70%;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  @media only screen and (max-width: 1000px) {
+    width: 85%;
+  }
+  @media only screen and (max-width: 768px) {
+    width: 95%;
+  }
+
+  &--icon {
+    height: 5rem;
+    width: 2.5rem;
+    fill: $primary-color;
+    margin-right: 3rem;
+    cursor: pointer;
+
+    &:hover {
+      fill: $primary-light-color;
+    }
+  }
+
+  &--button {
+    border: none;
+    border-radius: 0.2rem;
+    width: fit-content;
+    font-size: 1.4rem;
+    padding: 1.5rem 3rem;
+    background: linear-gradient(to bottom left, #44607c, #2c3e50);
+    color: #ffffff;
+    transition: all 0.3s;
+
+    &:hover {
+      background: linear-gradient(to top left, #44607c, #2c3e50);
+    }
+  }
+}
