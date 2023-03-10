@@ -18,12 +18,12 @@ const Form = ({ onSubmit, error, isLoading }) => {
     passwordIsFocus: false,
   });
 
+  // Two - way binding implementation.
   const emailOnChangeHandler = (e) => {
     setForm((prev) => {
       return { ...prev, email: e.target.value };
     });
   };
-
   const passwordOnChangeHandler = (e) => {
     setForm((prev) => {
       return { ...prev, password: e.target.value };
@@ -31,7 +31,6 @@ const Form = ({ onSubmit, error, isLoading }) => {
   };
 
   // Allowing the user to unfocus the input field before checking if the input field is correct.
-
   const emailOnBlurHandler = (e) => {
     setForm((prev) => {
       return { ...prev, emailIsFocus: true };

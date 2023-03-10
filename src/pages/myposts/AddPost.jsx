@@ -34,21 +34,28 @@ const AddNewPost = () => {
     updateAllPostState,
     updateUserPostState,
   } = useContext(AppContext);
+
+  // Getting the full details of the signed user from the users array
   const user = users.find((usr) => usr.email === isLoggedIn.email);
+
   const post = allPosts.find((pst) => pst.userId === user.id);
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
+  // Navigating back handler
   const backHandler = () => {
     const lastIndex = pathname.lastIndexOf("/");
     navigate(pathname.slice(0, lastIndex));
   };
+  // Two - way binding
   const titleOnChangeHandler = (e) => {
     setTitle(e.target.value);
   };
   const bodyOnChangeHandler = (e) => {
     setBody(e.target.value);
   };
+
+  // The function that will be triggered when the add button is clicked.
   const addPostHandler = async (e) => {
     e.preventDefault();
     setIsLoading(false);
@@ -80,6 +87,7 @@ const AddNewPost = () => {
     backHandler();
   };
 
+  // The function that will be triggered when the update button is clicked.
   const updatePostHandler = async (e) => {
     e.preventDefault();
     setIsLoading(false);
@@ -116,6 +124,7 @@ const AddNewPost = () => {
     backHandler();
   };
 
+  // This is used to prefill the input field when trying to update a post.
   useEffect(() => {
     const postToUpdate = GetItemFromLocalStorage("edit");
     if (postToUpdate) {

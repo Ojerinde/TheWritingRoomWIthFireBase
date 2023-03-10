@@ -11,6 +11,7 @@ const Home = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { allPosts, updateAllPostState } = useContext(AppContext);
   useEffect(() => {
+    // IIFE
     (async () => {
       setIsLoading(true);
       const colRef = collection(db, "posts");

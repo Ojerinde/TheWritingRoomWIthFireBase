@@ -19,6 +19,7 @@ const SignUp = () => {
       setIsSuccess(true);
     } catch (error) {
       setError({ hasError: true, message: error.message });
+      // Clearing the error after 3s
       setTimeout(() => {
         setError({ hasError: false, message: "" });
       }, 3000);

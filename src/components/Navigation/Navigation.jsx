@@ -10,7 +10,7 @@ const Navigation = () => {
   const { isLoggedIn, updateLoggedInState } = useContext(AppContext);
 
   useEffect(() => {
-    // Sticky navigation
+    // Sticky navigation logic
     const nav = document.querySelector("#nav");
     const header = document.querySelector(".navigation__container");
 

@@ -172,7 +172,7 @@ const Form = ({ onSubmit, isLoading, error, success }) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    // Send form details to backend
+    // Send form details to parent component
     onSubmit({
       firstname: form.firstname,
       lastname: form.lastname,

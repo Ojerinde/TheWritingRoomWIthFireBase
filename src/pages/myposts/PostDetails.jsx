@@ -39,18 +39,20 @@ const PostDetails = () => {
 
   const [showCommentBox, setShowCommentBox] = useState(false);
 
-  const lastIndex = pathname?.lastIndexOf("/");
-  const path = pathname?.slice(0, lastIndex);
-
   const post = allPosts?.find((pos) => {
     return pos.id === postId;
   });
   const user = users?.find((usr) => usr.email === isLoggedIn.email);
+
+  // Enabling the edit and delete icon
   const canDelete = post?.userId === user?.id;
+
   const [comments, setComments] = useState(post?.comments);
   const [isLoading, setIsLoading] = useState(false);
 
   const backHandler = () => {
+    const lastIndex = pathname?.lastIndexOf("/");
+    const path = pathname?.slice(0, lastIndex);
     navigate(path);
   };
 
@@ -64,6 +66,7 @@ const PostDetails = () => {
     SetItemToLocalStorage("edit", post);
   };
 
+  // This is the function that will triggered when the delete icon is clicked.
   const deleteHandler = async () => {
     if (!canDelete) return;
     // eslint-disable-next-line no-restricted-globals
@@ -92,6 +95,7 @@ const PostDetails = () => {
     }
   };
 
+   // This is the function that will triggered when the add button is clicked.
   const addCommentHandler = async (body) => {
     setIsLoading(false);
     const comment = {

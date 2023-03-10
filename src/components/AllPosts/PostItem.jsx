@@ -4,6 +4,7 @@ import Button from "../UI/Button";
 const PostItem = ({ id, title, userId, body }) => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
+  // This function programatically navigate to a page to see all detils about a post
   const fullPostHandler = () => {
     navigate(`${pathname}/` + id);
   };

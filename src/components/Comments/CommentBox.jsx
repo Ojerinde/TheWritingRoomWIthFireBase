@@ -8,6 +8,7 @@ const CommentBox = ({ onClose, onAdd, isLoading }) => {
 
   const addCommentHandler = () => {
     const body = bodyRef.current.value;
+    // onAdd prop pass the input field value to the parent component.
     onAdd(body);
   };
   return (

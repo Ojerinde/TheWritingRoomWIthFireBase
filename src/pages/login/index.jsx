@@ -11,6 +11,8 @@ const Login = () => {
   const [error, setError] = useState({ hasError: false, message: "" });
   const navigate = useNavigate();
   const { updateLoggedInState } = useContext(AppContext);
+
+  // The function that will be triggered when the login button is clicked
   const signInHandler = async (formData) => {
     const { email, password } = formData;
     setIsLoading(true);

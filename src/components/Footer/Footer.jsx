@@ -11,10 +11,12 @@ const Footer = () => {
   const [github, setGithub] = useState(false);
   const [twitter, setTwitter] = useState(false);
   const [linkedIn, setlinkedIn] = useState(false);
+
   const scrollToTopHandler = () => {
     const header = document.getElementById("header");
     header.scrollIntoView({ behavior: "smooth" });
   };
+
   return (
     <footer className="footer">
       <div className="footer__scroll--box" onClick={scrollToTopHandler}>

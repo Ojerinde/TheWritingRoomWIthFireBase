@@ -12,11 +12,11 @@ const Pagination = (props) => {
   const prevHandler = () => {
     if (page === 1) return;
     setPage((page) => page - 1);
+    // onChange props pass the updated page number to the parent component.
     props.onChange(page - 1);
   };
   const nextHandler = () => {
     if (page === total_pages) return;
-
     setPage((page) => page + 1);
     props.onChange(page + 1);
   };

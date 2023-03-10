@@ -25,7 +25,7 @@ const ErrorFallback = (props) => {
   return (
     <div role="alert" className="boundary__error">
       <p>Something went wrong!</p>
-      <pre>{props.error.message}</pre>
+      <div>{props.error.message}</div>
       <button onClick={props.resetErrorBoundary}>Restart app</button>
     </div>
   );
@@ -33,8 +33,10 @@ const ErrorFallback = (props) => {
 
 const App = () => {
   const navigate = useNavigate();
+  // consuming the created context
   const { updateLoggedInState, updateUsersState } = useContext(AppContext);
   useEffect(() => {
+    // IIFE
     (async () => {
       await onAuthStateChanged(auth, (user) => {
         if (user) {
@@ -57,6 +59,7 @@ const App = () => {
         data.id = doc.id;
         return data;
       });
+      // Storing the fetched users in the context
       updateUsersState(docs);
     })();
   }, [navigate, updateLoggedInState, updateUsersState]);
@@ -92,7 +95,7 @@ const App = () => {
             </Route>
           </Route>
 
-          {/* Routes that will be matched if none of tthe route(s) is matched */}
+          {/* Routes that will be matched if none of the route(s) is matched */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
