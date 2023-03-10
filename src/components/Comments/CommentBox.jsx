@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
+import LoadingSpinner from "../../pages/login/LoadingSpinner/LoadingSpinner";
 import Button from "../UI/Button";
 import Input from "../UI/Input/Input";
 
