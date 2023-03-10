@@ -61,3 +61,12 @@
 .success_button:hover {
   color: #2e3843;
 }
+@media only screen and (max-width: 650px) {
+  .invalid__input {
+    width: 100%;
+    margin-top: -2rem;
+    color: #d56974;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+  }
+}

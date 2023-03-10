@@ -17,7 +17,7 @@ const checkFormValidity = (form, setForm, e = {}) => {
     lastnameIsValid &&
     emailIsValid &&
     passwordIsValid &&
-    e.target.value === form.password
+    e.target?.value === form.password
   ) {
     setForm((prev) => {
       return { ...prev, formIsValid: true };
@@ -54,31 +54,32 @@ const Form = ({ onSubmit, isLoading, error, success }) => {
 
   const firstnameOnChangeHandler = (e) => {
     setForm((prev) => {
-      return { ...prev, firstname: e.target.value };
+      return { ...prev, firstname: e.target?.value };
     });
   };
   const lastnameOnChangeHandler = (e) => {
     setForm((prev) => {
-      return { ...prev, lastname: e.target.value };
+      return { ...prev, lastname: e.target?.value };
     });
   };
 
   const emailOnChangeHandler = (e) => {
     setForm((prev) => {
-      return { ...prev, email: e.target.value };
+      return { ...prev, email: e.target?.value };
     });
   };
 
   const passwordOnChangeHandler = (e) => {
     setForm((prev) => {
-      return { ...prev, password: e.target.value };
+      return { ...prev, password: e.target?.value };
     });
   };
 
   const confirmpasswordOnChangeHandler = (e) => {
     setForm((prev) => {
-      return { ...prev, confirmpassword: e.target.value };
+      return { ...prev, confirmpassword: e.target?.value };
     });
+    checkFormValidity(form, setForm, e);
   };
 
   // Allowing the user to unfocus the input field before checking if the input field is correct.
@@ -87,7 +88,7 @@ const Form = ({ onSubmit, isLoading, error, success }) => {
       return { ...prev, firstnameIsFocus: true };
     });
 
-    if (form.firstname.length >= 3 && form.firstname.length <= 8) {
+    if (form.firstname.length >= 3 && form.firstname.length <= 12) {
       setForm((prev) => {
         return { ...prev, firstnameIsValid: true };
       });
@@ -104,7 +105,7 @@ const Form = ({ onSubmit, isLoading, error, success }) => {
       return { ...prev, lastnameIsFocus: true };
     });
 
-    if (form.lastname.length >= 3 && form.lastname.length <= 8) {
+    if (form.lastname.length >= 3 && form.lastname.length <= 12) {
       setForm((prev) => {
         return { ...prev, lastnameIsValid: true };
       });
@@ -181,23 +182,23 @@ const Form = ({ onSubmit, isLoading, error, success }) => {
     });
 
     // Clearing the input fields
-    // setForm({
-    //   firstname: "",
-    //   lastname: "",
-    //   email: "",
-    //   password: "",
-    //   confirmpassword: "",
-    //   firstnameIsValid: false,
-    //   lastnameIsValid: false,
-    //   emailIsValid: false,
-    //   passwordIsValid: false,
-    //   confirmpasswordIsValid: false,
-    //   firstnameIsFocus: false,
-    //   lastnameIsFocus: false,
-    //   emailIsFocus: false,
-    //   confirmpasswordIsFocus: false,
-    //   formIsValid: false,
-    // });
+    setForm({
+      firstname: "",
+      lastname: "",
+      email: "",
+      password: "",
+      confirmpassword: "",
+      firstnameIsValid: false,
+      lastnameIsValid: false,
+      emailIsValid: false,
+      passwordIsValid: false,
+      confirmpasswordIsValid: false,
+      firstnameIsFocus: false,
+      lastnameIsFocus: false,
+      emailIsFocus: false,
+      confirmpasswordIsFocus: false,
+      formIsValid: false,
+    });
   };
 
   return (
@@ -217,9 +218,10 @@ const Form = ({ onSubmit, isLoading, error, success }) => {
             onBlur={firstnameOnBlurHandler}
           />
           {form.firstnameIsFocus && !form.firstnameIsValid && (
-            <pre className={classes.invalid__input}>
-              Enter a firstname of length above 3 & not more than 8
-            </pre>
+            <div className={classes.invalid__input}>
+              Please enter a first name that is between 4 and 12 characters in
+              length
+            </div>
           )}
         </div>
         <div className="col-md-6 col-sm-12">
@@ -234,9 +236,10 @@ const Form = ({ onSubmit, isLoading, error, success }) => {
             onBlur={lastnameOnBlurHandler}
           />
           {form.lastnameIsFocus && !form.lastnameIsValid && (
-            <pre className={classes.invalid__input}>
-              Enter a lastname of length above 3 & not more than 8
-            </pre>
+            <div className={classes.invalid__input}>
+              Please enter a last name that is between 4 and 12 characters in
+              length
+            </div>
           )}
         </div>
       </div>
@@ -252,7 +255,7 @@ const Form = ({ onSubmit, isLoading, error, success }) => {
         onBlur={emailOnBlurHandler}
       />
       {form.emailIsFocus && !form.emailIsValid && (
-        <pre className={classes.invalid__input}>Enter a valid email.</pre>
+        <div className={classes.invalid__input}>Enter a valid email.</div>
       )}
 
       <div className="row">
@@ -273,9 +276,9 @@ const Form = ({ onSubmit, isLoading, error, success }) => {
             setShowPassword={setShowPassword}
           />
           {form.passwordIsFocus && !form.passwordIsValid && (
-            <pre className={classes.invalid__input}>
+            <div className={classes.invalid__input}>
               MinLength(8), uppercase, lowercase, character, number
-            </pre>
+            </div>
           )}
         </div>
 
@@ -298,9 +301,9 @@ const Form = ({ onSubmit, isLoading, error, success }) => {
             setShowPassword={setShowConfirmPassword}
           />
           {form.confirmpasswordIsFocus && !form.confirmpasswordIsValid && (
-            <pre className={classes.invalid__input}>
+            <div className={classes.invalid__input}>
               Password does not match!
-            </pre>
+            </div>
           )}
         </div>
       </div>
