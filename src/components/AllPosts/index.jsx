@@ -13,7 +13,7 @@ const AllPosts = ({ title, isLoading, allPosts, postsPerPage }) => {
     <div>
       {isLoading && !allPosts && <LoadingSpinner />}
       <h3 className="post-list-title">{title}</h3>
-      {allPosts.length > 0 ? (
+      {allPosts?.length > 0 ? (
         <ul className="post-list">
           {allPosts.slice(start, end).map((post, index) => (
             <PostItem
@@ -28,7 +28,7 @@ const AllPosts = ({ title, isLoading, allPosts, postsPerPage }) => {
       ) : (
         <p className="no__item">No article to display!</p>
       )}
-      {allPosts.length > 0 && (
+      {allPosts?.length > 0 && (
         <Pagination
           postsPerPage={postsPerPage}
           totalPosts={allPosts.length}

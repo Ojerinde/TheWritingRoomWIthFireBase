@@ -32,7 +32,7 @@ const MyPosts = () => {
         data.id = doc.id;
         return data;
       });
-      const user = users.find((usr) => usr.email === isLoggedIn.email);
+      const user = users?.find((usr) => usr.email === isLoggedIn.email);
       const userposts = docs.filter((pst) => pst.userId === user.id);
       updateUserPostState(userposts);
       setIsLoading(false);

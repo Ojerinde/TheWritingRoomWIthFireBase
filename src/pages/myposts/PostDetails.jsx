@@ -1,5 +1,5 @@
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import Comments from "../../components/Comments";
 import CommentBox from "../../components/Comments/CommentBox";
 import { BsPersonCircle } from "react-icons/bs";
@@ -45,6 +45,8 @@ const PostDetails = () => {
   const post = allPosts?.find((pos) => {
     return pos.id === postId;
   });
+  const user = users?.find((usr) => usr.email === isLoggedIn.email);
+  const canDelete = post?.userId === user?.id;
   const [comments, setComments] = useState(post?.comments);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -57,11 +59,13 @@ const PostDetails = () => {
   };
 
   const editHandler = () => {
+    if (!canDelete) return;
     navigate(`${pathname}/edit`);
     SetItemToLocalStorage("edit", post);
   };
 
   const deleteHandler = async () => {
+    if (!canDelete) return;
     // eslint-disable-next-line no-restricted-globals
     const areYouSure = confirm("Are you sure?");
     if (!areYouSure) return;
@@ -113,7 +117,7 @@ const PostDetails = () => {
       // Refetching all post
       updateAllPostState(docs);
       // Refecthing signedin user post
-      const user = users.find((usr) => usr.email === isLoggedIn.email);
+      const user = users?.find((usr) => usr.email === isLoggedIn.email);
       const userposts = docs.filter((pst) => pst.userId === user.id);
       updateUserPostState(userposts);
       // Refetching all comments
@@ -127,10 +131,6 @@ const PostDetails = () => {
       console.error("Error updating document: ", error);
     }
   };
-
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
     <>
@@ -168,7 +168,9 @@ const PostDetails = () => {
               {" "}
               {edit && <p className="post__details--iconname">Edit</p>}
               <AiFillEdit
-                className="post__details--icon post__details--icon__2"
+                className={`post__details--icon ${
+                  !canDelete ? "post__details--icon__3" : ""
+                }`}
                 onMouseEnter={() => setEdit(true)}
                 onMouseLeave={() => setEdit(false)}
                 onClick={editHandler}
@@ -177,7 +179,9 @@ const PostDetails = () => {
             <div className="post__details--iconbox">
               {remove && <p className="post__details--iconname">Delete</p>}
               <AiFillDelete
-                className="post__details--icon post__details--icon__3"
+                className={`post__details--icon ${
+                  !canDelete ? "post__details--icon__3" : ""
+                }`}
                 onMouseEnter={() => setDelete(true)}
                 onMouseLeave={() => setDelete(false)}
                 onClick={deleteHandler}
