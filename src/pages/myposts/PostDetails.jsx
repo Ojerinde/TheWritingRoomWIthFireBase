@@ -199,7 +199,7 @@ const PostDetails = () => {
           </div>
         )}
         <div className="post__comment--list">
-          {comments.length > 0 ? (
+          {comments?.length > 0 ? (
             <Comments comments={comments} />
           ) : (
             <p className="no__item">Nobody has commented yet!</p>
