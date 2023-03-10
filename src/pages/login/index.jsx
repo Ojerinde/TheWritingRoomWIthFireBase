@@ -20,7 +20,7 @@ const Login = () => {
     try {
       const response = await signInWithEmailAndPassword(auth, email, password);
       const user = response.user;
-      await updateLoggedInState((prev) => ({
+      updateLoggedInState((prev) => ({
         isLoggedIn: true,
         email: user.email,
       }));

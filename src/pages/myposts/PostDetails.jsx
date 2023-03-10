@@ -61,6 +61,7 @@ const PostDetails = () => {
   };
 
   const editHandler = () => {
+    // If the signed user is not the owner of the post, do not navigate to edit page.
     if (!canDelete) return;
     navigate(`${pathname}/edit`);
     SetItemToLocalStorage("edit", post);
@@ -68,6 +69,7 @@ const PostDetails = () => {
 
   // This is the function that will triggered when the delete icon is clicked.
   const deleteHandler = async () => {
+    // If the signed user is not the owner of the post, do not trigger delete action.
     if (!canDelete) return;
     // eslint-disable-next-line no-restricted-globals
     const areYouSure = confirm("Are you sure?");
@@ -95,7 +97,7 @@ const PostDetails = () => {
     }
   };
 
-   // This is the function that will triggered when the add button is clicked.
+  // This is the function that will triggered when the add button is clicked.
   const addCommentHandler = async (body) => {
     setIsLoading(false);
     const comment = {
